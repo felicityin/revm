@@ -150,6 +150,28 @@ pub trait Transaction {
         };
         min(max_price, base_fee.saturating_add(max_priority_fee))
     }
+
+    /// Returns the effective tip for this transaction.
+    ///
+    /// For dynamic fee transactions: `min(max_fee_per_gas - base_fee, max_priority_fee_per_gas)`.
+    /// For legacy fee transactions: `gas_price - base_fee`.
+    fn effective_tip_per_gas(&self, base_fee: u64) -> Option<u128> {
+        let base_fee = base_fee as u128;
+
+        let max_fee_per_gas = self.max_fee_per_gas();
+
+        // Check if max_fee_per_gas is less than base_fee
+        if max_fee_per_gas < base_fee {
+            return None;
+        }
+
+        // Calculate the difference between max_fee_per_gas and base_fee
+        let fee = max_fee_per_gas - base_fee;
+
+        // Compare the fee with max_priority_fee_per_gas (or gas price for legacy fee transactions)
+        self.max_priority_fee_per_gas()
+            .map_or(Some(fee), |priority_fee| Some(fee.min(priority_fee)))
+    }
 }
 
 #[auto_impl(&, &mut, Box, Arc)]

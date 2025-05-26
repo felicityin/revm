@@ -1,6 +1,8 @@
 use crate::eip170;
 use alloy_primitives::{b256, Address, B256};
 
+pub const GOAT_CHAIN_ID: u64 = 2345;
+
 /// Number of block hashes that EVM can access in the past (pre-Prague)
 pub const BLOCK_HASH_HISTORY: u64 = 256;
 
