@@ -3,6 +3,7 @@ pub mod eip2930;
 pub mod eip7702;
 pub mod transaction_type;
 
+use alloy_consensus::transaction::goat_types::Mint;
 pub use alloy_types::{
     AccessList, AccessListItem, Authorization, RecoveredAuthority, RecoveredAuthorization,
     SignedAuthorization,
@@ -34,6 +35,18 @@ pub trait Transaction {
     ///
     /// Depending on this field other functions should be called.
     fn tx_type(&self) -> u8;
+
+    fn is_goat_tx(&self) -> bool {
+        self.tx_type() == TransactionType::Goat as u8
+    }
+
+    fn deposit(&self) -> Option<Mint> {
+        None
+    }
+
+    fn withdraw(&self) -> Option<Mint> {
+        None
+    }
 
     /// Caller aka Author aka transaction signer.
     ///
@@ -137,6 +150,10 @@ pub trait Transaction {
     ///
     /// While for transactions after Eip1559 it is minimum of max_fee and `base + max_priority_fee`.
     fn effective_gas_price(&self, base_fee: u128) -> u128 {
+        if self.is_goat_tx() {
+            return 0;
+        }
+
         if self.tx_type() == TransactionType::Legacy as u8
             || self.tx_type() == TransactionType::Eip2930 as u8
         {
@@ -156,6 +173,10 @@ pub trait Transaction {
     /// For dynamic fee transactions: `min(max_fee_per_gas - base_fee, max_priority_fee_per_gas)`.
     /// For legacy fee transactions: `gas_price - base_fee`.
     fn effective_tip_per_gas(&self, base_fee: u64) -> Option<u128> {
+        if self.is_goat_tx() {
+            return Some(0);
+        }
+
         let base_fee = base_fee as u128;
 
         let max_fee_per_gas = self.max_fee_per_gas();
