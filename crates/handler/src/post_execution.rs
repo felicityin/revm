@@ -25,6 +25,7 @@ pub fn exec_goat<CTX: ContextTr>(context: &mut CTX) -> Result<(), <CTX::Db as Da
     if let Some(deposit) = context.tx().deposit() {
         // Add the deposit value to the target.
         let deposit_account = context.journal().load_account(deposit.address)?;
+        deposit_account.data.mark_touch();
         deposit_account.data.info.balance = deposit_account
             .data
             .info
@@ -34,6 +35,7 @@ pub fn exec_goat<CTX: ContextTr>(context: &mut CTX) -> Result<(), <CTX::Db as Da
         // Add the tax to GF.
         if deposit.tax > U256::ZERO {
             let foundation_account = context.journal().load_account(GOAT_FOUNDDATION_CONTRACT)?;
+            foundation_account.data.mark_touch();
             foundation_account.data.info.balance = foundation_account
                 .data
                 .info
