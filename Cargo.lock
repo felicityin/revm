@@ -69,6 +69,7 @@ dependencies = [
 [[package]]
 name = "alloy-consensus"
 version = "0.14.0"
+source = "git+https://github.com/zkMIPS-patches/alloy?branch=patch-0.14.0-goat#2bb5bf041d48dc0a2e1bf09ed6b1675d5ba338b5"
 dependencies = [
  "alloy-eips",
  "alloy-primitives",
@@ -91,6 +92,7 @@ dependencies = [
 [[package]]
 name = "alloy-consensus-any"
 version = "0.14.0"
+source = "git+https://github.com/zkMIPS-patches/alloy?branch=patch-0.14.0-goat#2bb5bf041d48dc0a2e1bf09ed6b1675d5ba338b5"
 dependencies = [
  "alloy-consensus",
  "alloy-eips",
@@ -140,6 +142,7 @@ dependencies = [
 [[package]]
 name = "alloy-eips"
 version = "0.14.0"
+source = "git+https://github.com/zkMIPS-patches/alloy?branch=patch-0.14.0-goat#2bb5bf041d48dc0a2e1bf09ed6b1675d5ba338b5"
 dependencies = [
  "alloy-eip2124",
  "alloy-eip2930",
@@ -170,6 +173,7 @@ dependencies = [
 [[package]]
 name = "alloy-json-rpc"
 version = "0.14.0"
+source = "git+https://github.com/zkMIPS-patches/alloy?branch=patch-0.14.0-goat#2bb5bf041d48dc0a2e1bf09ed6b1675d5ba338b5"
 dependencies = [
  "alloy-primitives",
  "alloy-sol-types",
@@ -182,6 +186,7 @@ dependencies = [
 [[package]]
 name = "alloy-network"
 version = "0.14.0"
+source = "git+https://github.com/zkMIPS-patches/alloy?branch=patch-0.14.0-goat#2bb5bf041d48dc0a2e1bf09ed6b1675d5ba338b5"
 dependencies = [
  "alloy-consensus",
  "alloy-consensus-any",
@@ -206,6 +211,7 @@ dependencies = [
 [[package]]
 name = "alloy-network-primitives"
 version = "0.14.0"
+source = "git+https://github.com/zkMIPS-patches/alloy?branch=patch-0.14.0-goat#2bb5bf041d48dc0a2e1bf09ed6b1675d5ba338b5"
 dependencies = [
  "alloy-consensus",
  "alloy-eips",
@@ -248,6 +254,7 @@ dependencies = [
 [[package]]
 name = "alloy-provider"
 version = "0.14.0"
+source = "git+https://github.com/zkMIPS-patches/alloy?branch=patch-0.14.0-goat#2bb5bf041d48dc0a2e1bf09ed6b1675d5ba338b5"
 dependencies = [
  "alloy-chains",
  "alloy-consensus",
@@ -307,6 +314,7 @@ dependencies = [
 [[package]]
 name = "alloy-rpc-client"
 version = "0.14.0"
+source = "git+https://github.com/zkMIPS-patches/alloy?branch=patch-0.14.0-goat#2bb5bf041d48dc0a2e1bf09ed6b1675d5ba338b5"
 dependencies = [
  "alloy-json-rpc",
  "alloy-primitives",
@@ -330,6 +338,7 @@ dependencies = [
 [[package]]
 name = "alloy-rpc-types-any"
 version = "0.14.0"
+source = "git+https://github.com/zkMIPS-patches/alloy?branch=patch-0.14.0-goat#2bb5bf041d48dc0a2e1bf09ed6b1675d5ba338b5"
 dependencies = [
  "alloy-consensus-any",
  "alloy-rpc-types-eth",
@@ -339,6 +348,7 @@ dependencies = [
 [[package]]
 name = "alloy-rpc-types-eth"
 version = "0.14.0"
+source = "git+https://github.com/zkMIPS-patches/alloy?branch=patch-0.14.0-goat#2bb5bf041d48dc0a2e1bf09ed6b1675d5ba338b5"
 dependencies = [
  "alloy-consensus",
  "alloy-consensus-any",
@@ -357,6 +367,7 @@ dependencies = [
 [[package]]
 name = "alloy-serde"
 version = "0.14.0"
+source = "git+https://github.com/zkMIPS-patches/alloy?branch=patch-0.14.0-goat#2bb5bf041d48dc0a2e1bf09ed6b1675d5ba338b5"
 dependencies = [
  "alloy-primitives",
  "serde",
@@ -366,6 +377,7 @@ dependencies = [
 [[package]]
 name = "alloy-signer"
 version = "0.14.0"
+source = "git+https://github.com/zkMIPS-patches/alloy?branch=patch-0.14.0-goat#2bb5bf041d48dc0a2e1bf09ed6b1675d5ba338b5"
 dependencies = [
  "alloy-primitives",
  "async-trait",
@@ -379,6 +391,7 @@ dependencies = [
 [[package]]
 name = "alloy-signer-local"
 version = "0.14.0"
+source = "git+https://github.com/zkMIPS-patches/alloy?branch=patch-0.14.0-goat#2bb5bf041d48dc0a2e1bf09ed6b1675d5ba338b5"
 dependencies = [
  "alloy-consensus",
  "alloy-network",
@@ -464,6 +477,7 @@ dependencies = [
 [[package]]
 name = "alloy-transport"
 version = "0.14.0"
+source = "git+https://github.com/zkMIPS-patches/alloy?branch=patch-0.14.0-goat#2bb5bf041d48dc0a2e1bf09ed6b1675d5ba338b5"
 dependencies = [
  "alloy-json-rpc",
  "base64",
@@ -484,6 +498,7 @@ dependencies = [
 [[package]]
 name = "alloy-transport-http"
 version = "0.14.0"
+source = "git+https://github.com/zkMIPS-patches/alloy?branch=patch-0.14.0-goat#2bb5bf041d48dc0a2e1bf09ed6b1675d5ba338b5"
 dependencies = [
  "alloy-json-rpc",
  "alloy-transport",
